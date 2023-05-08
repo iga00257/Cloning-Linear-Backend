@@ -1,21 +1,21 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import userRouter from './routes/userRoutes';
-import projectRouter from './routes/issueRoutes';
-import statusRouter from './routes/statusRoutes';
-import configRouter from './routes/configRoutes';
-import authRouter from './routes/auth';
+import userRouter from './src/routes/userRoutes';
+import projectRouter from './src/routes/issueRoutes';
+import statusRouter from './src/routes/statusRoutes';
+import configRouter from './src/routes/configRoutes';
+import authRouter from './src/routes/auth';
 import mongoose, { ConnectOptions } from 'mongoose';
-import { createRoles,assignRoles,createUsers } from './utils/role';
-import { type IPermission } from './models/permissionsModel';
-import { createPermissions } from './utils/permissionCreate';
-import permissionController from './controllers/permissionController';
+import { createRoles,assignRoles,createUsers } from './src/utils/role';
+import { type IPermission } from './src/models/permissionsModel';
+import { createPermissions } from './src/utils/permissionCreate';
+import permissionController from './src/controllers/permissionController';
 import dotenv from 'dotenv';
 
 const uri = 'mongodb://mongo:jpN74L63Bq18@infra.zeabur.com:31974/';
 const app = express();
-const PORT = 8080;
+const PORT = 3000;
 
 async function init() {
   await createPermissions();
