@@ -15,7 +15,7 @@ import dotenv from 'dotenv';
 
 const uri = 'mongodb://mongo:jpN74L63Bq18@infra.zeabur.com:31974/';
 const app = express();
-const PORT = 3000;
+const PORT = 8080;
 
 async function init() {
   await createPermissions();
