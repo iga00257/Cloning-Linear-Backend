@@ -35,7 +35,11 @@ mongoose.connect(uri,{dbName:"tao"})
 
 // Middleware
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type']
+}));
 
 // Routes
 app.use('/api', userRouter);
