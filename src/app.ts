@@ -13,7 +13,7 @@ import { createPermissions } from './utils/permissionCreate';
 import permissionController from './controllers/permissionController';
 import dotenv from 'dotenv';
 
-const uri = process.env.MONGODB_URI || 'mongodb://mongo:jpN74L63Bq18@infra.zeabur.com:31974/';
+const uri = 'mongodb://mongo:jpN74L63Bq18@infra.zeabur.com:31974/';
 const app = express();
 const PORT = 3000;
 
@@ -22,7 +22,7 @@ async function init() {
   await createUsers();
 }
 init()
-dotenv.config();
+// dotenv.config();
 // Connect to MongoDB
 
 mongoose.connect(uri,{dbName:"tao"})
